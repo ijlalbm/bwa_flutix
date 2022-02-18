@@ -16,7 +16,13 @@ class _MainPageState extends State<MainPage> {
       ),
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            BlocBuilder<UserBloc, UserState>(
+              builder: (_, userState) => (userState is UserLoaded)
+                  ? Text(userState.user.name!)
+                  : SizedBox(),
+            ),
             ElevatedButton(
               onPressed: () {
                 AuthServices.signOut();
