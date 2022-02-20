@@ -39,11 +39,6 @@ class MyApp extends StatelessWidget {
           builder: (_, themeState) {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-                  //     colorScheme: ColorScheme.fromSwatch(
-                  //   primarySwatch: Colors.red,
-                  // ),
-                  ),
               home: Wrapper(),
             );
           },
