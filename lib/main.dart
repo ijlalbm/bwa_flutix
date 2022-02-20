@@ -30,11 +30,23 @@ class MyApp extends StatelessWidget {
           ),
           BlocProvider(
             create: (_) => UserBloc(),
+          ),
+          BlocProvider(
+            create: (_) => ThemeBloc(),
           )
         ],
-        child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          home: Wrapper(),
+        child: BlocBuilder<ThemeBloc, ThemeState>(
+          builder: (_, themeState) {
+            return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              theme: ThemeData(
+                  //     colorScheme: ColorScheme.fromSwatch(
+                  //   primarySwatch: Colors.red,
+                  // ),
+                  ),
+              home: Wrapper(),
+            );
+          },
         ),
       ),
     );
