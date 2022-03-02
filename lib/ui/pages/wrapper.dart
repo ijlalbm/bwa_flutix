@@ -25,7 +25,11 @@ class Wrapper extends StatelessWidget {
           ? SplashPage()
           : (pageState is OnLoginPage)
               ? SignInPage()
-              : MainPage(),
+              : (pageState is OnRegistrationPage)
+                  ? SignUpPage(
+                      registrationData: model.RegistrationData(),
+                    )
+                  : MainPage(),
     );
   }
 }

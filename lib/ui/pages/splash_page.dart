@@ -51,7 +51,11 @@ class SplashPage extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   primary: mainColor,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  context
+                      .read<PageBloc>()
+                      .add(GoToRegistrationPage(model.RegistrationData()));
+                },
                 child: Text(
                   'Get Started',
                   style: whiteTextFont.copyWith(fontSize: 16),
